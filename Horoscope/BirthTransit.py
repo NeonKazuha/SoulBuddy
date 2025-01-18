@@ -2,6 +2,7 @@ import swisseph as swe
 from opencage.geocoder import OpenCageGeocode
 import os
 from dotenv import load_dotenv
+import json
 
 load_dotenv()
 OPENCAGE_API_KEY = os.getenv('OPENCAGE_API_KEY')
@@ -92,6 +93,18 @@ else:
 
 sidereal_data_with_houses = calculate_sidereal_positions_with_houses(date, time, latitude, longitude)
 
+output = {
+    "location": location,
+    "coordinates": {
+        "latitude": latitude,
+        "longitude": longitude
+    },
+    "timestamp": f"{date} {time}",
+    "positions": sidereal_data_with_houses
+}
+
+birthtransit = json.dumps(output, indent=2)
+
 # Display results
 print('Vedic Astrology (Sidereal) Data with Houses and Rashis:')
 for data in sidereal_data_with_houses:
@@ -99,3 +112,4 @@ for data in sidereal_data_with_houses:
         print(f'Planet: {data["planet"]}, Degree: {data["degree"]}°, Rashi: {data["rashi"]}, House: {data["house"]}')
     else:
         print(f'Ascendant Degree: {data["ascendant_degree"]}°, Rashi: {data["ascendant_rashi"]}')
+

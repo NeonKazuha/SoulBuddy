@@ -3,6 +3,7 @@ from opencage.geocoder import OpenCageGeocode
 import os
 from dotenv import load_dotenv
 from datetime import datetime
+import json
 
 load_dotenv()
 OPENCAGE_API_KEY = os.getenv('OPENCAGE_API_KEY')
@@ -96,10 +97,18 @@ print(f'\nCalculating positions for current time: {current_time}')
 sidereal_data_with_houses = calculate_sidereal_positions_with_houses(latitude, longitude)
 
 # Display results
-print('\nVedic Astrology (Sidereal) Data with Houses and Rashis:')
 for data in sidereal_data_with_houses:
     if 'planet' in data:
         print(f'Planet: {data["planet"]}, Degree: {data["degree"]}°, Rashi: {data["rashi"]}, House: {data["house"]}')
-    else:
-        print(f'Ascendant Degree: {data["ascendant_degree"]}°, Rashi: {data["ascendant_rashi"]}')
 
+output = {
+    "location": location,
+    "coordinates": {
+        "latitude": latitude,
+        "longitude": longitude
+    },
+    "timestamp": current_time,
+    "positions": sidereal_data_with_houses
+}
+
+curtransit = json.dumps(output, indent=2)
