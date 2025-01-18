@@ -5,3 +5,4 @@ groq
 uvicorn
 fastapi
 pyswisseph
+pydantic
