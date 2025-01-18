@@ -1,4 +1,7 @@
 swisseph
 opencage
 python-dotenv
+groq
+uvicorn
+fastapi
 
