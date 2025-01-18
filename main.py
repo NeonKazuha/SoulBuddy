@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from Prediction import get_predictions
 from FindHoroscope import get_horoscope, generate_horoscope
@@ -7,12 +8,20 @@ from BirthTransit import get_birth_transit
 
 app = FastAPI()
 
-# Define the request body structure
+# Configure CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],  
+    allow_headers=["*"],  
+)
+
 class HoroscopeRequest(BaseModel):
-    dob: str  # Date of birth (YYYY-MM-DD)
-    tob: str  # Time of birth (HH:MM)
-    pob: str  # Place of birth
-    cp: str   # Current place
+    dob: str  
+    tob: str  
+    pob: str  
+    cp: str   
 
 @app.post("/horoscope/")
 async def get_horoscope_data(request: HoroscopeRequest):
