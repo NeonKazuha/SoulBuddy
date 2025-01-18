@@ -2,12 +2,12 @@ import json
 from groq import Groq
 import os
 from dotenv import load_dotenv
-from FindHoroscope import generate_horoscope, birthtransit, curtransit
+from FindHoroscope import generate_horoscope, get_horoscope
 
 load_dotenv()
 
-def generate_predictions():
-    horoscope_data = generate_horoscope(birthtransit, curtransit)
+def generate_predictions(dob: str, tob: str, pob: str, cp: str):
+    horoscope_data = get_horoscope(dob, tob, pob, cp)
     
     client = Groq(
         api_key=os.getenv("GROQ_API_KEY")
@@ -23,10 +23,11 @@ Please provide:
 3. Relationship guidance
 4. Health and wellbeing recommendations
 5. Personal growth opportunities
+6. Do's and Dont's for today
+7. Give Workouts and Meditations based on horoscope
 
 Format the response in clear sections."""
 
-    # Call Groq API
     chat_completion = client.chat.completions.create(
         messages=[
             {
@@ -34,7 +35,7 @@ Format the response in clear sections."""
                 "content": prompt
             }
         ],
-        model="mixtral-8x7b-32768",  # Using Mixtral model for comprehensive analysis
+        model="mixtral-8x7b-32768", 
         temperature=0.7,
     )
 
@@ -48,10 +49,10 @@ def format_predictions(predictions):
     formatted += predictions
     return formatted
 
-if __name__ == "__main__":
+def get_predictions(dob: str, tob: str, pob: str, cp: str):
     try:
-        predictions = generate_predictions()
+        predictions = generate_predictions(dob, tob, pob, cp)
         formatted_predictions = format_predictions(predictions)
-        print(formatted_predictions)
+        return {"predictions": formatted_predictions}
     except Exception as e:
-        print(f"Error generating predictions: {str(e)}")
+        return {"error": str(e)}

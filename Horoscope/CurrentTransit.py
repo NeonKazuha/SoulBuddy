@@ -78,37 +78,27 @@ def calculate_sidereal_positions_with_houses(latitude, longitude):
 
     return results
 
-location = input('Enter location (e.g., Mumbai, India): ')
+def get_current_transit(cp):
+    geocoder = OpenCageGeocode(OPENCAGE_API_KEY)
+    results = geocoder.geocode(cp)
 
-geocoder = OpenCageGeocode(OPENCAGE_API_KEY)
-results = geocoder.geocode(location)
+    if results and len(results):
+        latitude = results[0]['geometry']['lat']
+        longitude = results[0]['geometry']['lng']
+    else:
+        raise ValueError('Location not found')
 
-if results and len(results):
-    latitude = results[0]['geometry']['lat']
-    longitude = results[0]['geometry']['lng']
-    print(f'Coordinates for {location}: Latitude {latitude}, Longitude {longitude}')
-else:
-    print('Location not found')
-    exit()
+    current_time = datetime.now().strftime('%Y-%m-%d %H:%M')
+    sidereal_data_with_houses = calculate_sidereal_positions_with_houses(latitude, longitude)
 
-current_time = datetime.now().strftime('%Y-%m-%d %H:%M')
-print(f'\nCalculating positions for current time: {current_time}')
+    output = {
+        "location": cp,
+        "coordinates": {
+            "latitude": latitude,
+            "longitude": longitude
+        },
+        "timestamp": current_time,
+        "positions": sidereal_data_with_houses
+    }
 
-sidereal_data_with_houses = calculate_sidereal_positions_with_houses(latitude, longitude)
-
-# Display results
-for data in sidereal_data_with_houses:
-    if 'planet' in data:
-        print(f'Planet: {data["planet"]}, Degree: {data["degree"]}°, Rashi: {data["rashi"]}, House: {data["house"]}')
-
-output = {
-    "location": location,
-    "coordinates": {
-        "latitude": latitude,
-        "longitude": longitude
-    },
-    "timestamp": current_time,
-    "positions": sidereal_data_with_houses
-}
-
-curtransit = json.dumps(output, indent=2)
+    return json.dumps(output, indent=2)

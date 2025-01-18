@@ -1,6 +1,4 @@
 import json
-from BirthTransit import birthtransit
-from CurrentTransit import curtransit
 import swisseph as swe
 from datetime import datetime
 
@@ -36,41 +34,11 @@ def calculate_dasha(moon_degree, birth_date):
     
     return current_dasha
 
-def get_prediction_for_aspect(planet, aspect_type):
-    predictions = {
-        'conjunction': {
-            'Sun': 'A day of heightened self-awareness and vitality. Good for starting new projects.',
-            'Moon': 'Emotional intensity and sensitivity. Pay attention to your intuition.',
-            'Mercury': 'Enhanced communication and mental clarity. Favorable for important conversations.',
-            'Venus': 'Increased charm and creativity. Excellent for relationships and artistic pursuits.',
-            'Mars': 'High energy and motivation. Channel this energy into productive activities.',
-            'Jupiter': 'Opportunities for growth and expansion. Lucky day for new ventures.',
-            'Saturn': 'Important lessons and responsibilities. Focus on long-term goals.',
-            'Uranus': 'Unexpected changes and innovations. Stay flexible and open to new ideas.',
-            'Neptune': 'Heightened intuition and creativity. Good for spiritual practices.',
-            'Pluto': 'Powerful transformations. Time for deep personal growth.'
-        },
-        'opposition': {
-            'Sun': 'Potential conflicts with authority figures. Stay balanced and diplomatic.',
-            'Moon': 'Emotional tensions may arise. Practice self-care and patience.',
-            'Mercury': 'Communication challenges. Double-check important messages.',
-            'Venus': 'Relationship dynamics may be strained. Focus on compromise.',
-            'Mars': 'Energy might feel scattered. Avoid confrontations.',
-            'Jupiter': 'Watch for overconfidence or excess. Practice moderation.',
-            'Saturn': 'Obstacles may appear. Stay persistent but flexible.',
-            'Uranus': 'Resist impulsive changes. Find balance between old and new.',
-            'Neptune': 'Reality vs. illusion. Stay grounded and practical.',
-            'Pluto': 'Power struggles possible. Transform challenges into growth.'
-        }
-    }
-    return predictions.get(aspect_type, {}).get(planet, '')
-
 def analyze_horoscope(birth_data, transit_data):
     aspects = []
     predictions = []
     nakshatras = []
     dashas = []
-    daily_predictions = []
 
     # Get birth date from birth_data
     birth_timestamp = datetime.strptime(birth_data['timestamp'], '%Y-%m-%d %H:%M')
@@ -103,20 +71,14 @@ def analyze_horoscope(birth_data, transit_data):
             current_dasha = calculate_dasha(birth_deg, birth_timestamp)
             dashas.append(f"Current main dasha period: {current_dasha}")
         
-        # Step 2: Calculate Aspects and Their Predictions
+        # Step 2: Calculate Aspects
         degree_diff = abs(birth_deg - transit_deg)
         degree_diff = degree_diff % 360  # Normalize to 0-360°
 
         if abs(degree_diff - 0) <= 5:
             aspects.append(f"{planet['planet']} is in conjunction with its transit position")
-            prediction = get_prediction_for_aspect(planet['planet'], 'conjunction')
-            if prediction:
-                daily_predictions.append(prediction)
         elif abs(degree_diff - 180) <= 5:
             aspects.append(f"{planet['planet']} is in opposition to its transit position")
-            prediction = get_prediction_for_aspect(planet['planet'], 'opposition')
-            if prediction:
-                daily_predictions.append(prediction)
         elif abs(degree_diff - 120) <= 5:
             aspects.append(f"{planet['planet']} is in trine with its transit position")
         elif abs(degree_diff - 90) <= 5:
@@ -136,8 +98,7 @@ def analyze_horoscope(birth_data, transit_data):
         "aspects": aspects,
         "predictions": predictions,
         "nakshatras": nakshatras,
-        "dashas": dashas,
-        "daily_predictions": daily_predictions
+        "dashas": dashas
     }
 
 def generate_horoscope(birth_chart_json, current_transit_json):
@@ -151,11 +112,7 @@ def generate_horoscope(birth_chart_json, current_transit_json):
     # Format output
     horoscope = "Daily Horoscope Analysis:\n\n"
     
-    horoscope += "Today's Predictions:\n"
-    for prediction in analysis["daily_predictions"]:
-        horoscope += f"- {prediction}\n"
-        
-    horoscope += "\nNakshatras:\n"
+    horoscope += "Nakshatras:\n"
     for nakshatra in analysis["nakshatras"]:
         horoscope += f"- {nakshatra}\n"
         
@@ -173,7 +130,11 @@ def generate_horoscope(birth_chart_json, current_transit_json):
         
     return horoscope
 
-# Call generate_horoscope with birth transit and current transit data
-horoscope = generate_horoscope(birthtransit, curtransit)
-print(horoscope)
-print(f"\nPredictions for aspects:\n{get_prediction_for_aspect('Sun', 'conjunction')}")
+def get_horoscope(dob, tob, pob, cp):
+    from BirthTransit import get_birth_transit
+    from CurrentTransit import get_current_transit
+    
+    birth_transit = get_birth_transit(dob, tob, pob)
+    current_transit = get_current_transit(cp)
+    
+    return generate_horoscope(birth_transit, current_transit)

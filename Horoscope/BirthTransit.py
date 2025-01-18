@@ -75,41 +75,29 @@ def calculate_sidereal_positions_with_houses(date, time, latitude, longitude):
 
     return results
 
+def get_birth_transit(dob, tob, pob):
+    geocoder = OpenCageGeocode(OPENCAGE_API_KEY)
+    results = geocoder.geocode(pob)
 
-date = input('Enter date (YYYY-MM-DD): ')
-time = input('Enter time (HH:MM): ')
-location = input('Enter location (e.g., Mumbai, India): ')
-
-geocoder = OpenCageGeocode(OPENCAGE_API_KEY)
-results = geocoder.geocode(location)
-
-if results and len(results):
-    latitude = results[0]['geometry']['lat']
-    longitude = results[0]['geometry']['lng']
-    print(f'Coordinates for {location}: Latitude {latitude}, Longitude {longitude}')
-else:
-    print('Location not found')
-    exit()
-
-sidereal_data_with_houses = calculate_sidereal_positions_with_houses(date, time, latitude, longitude)
-
-output = {
-    "location": location,
-    "coordinates": {
-        "latitude": latitude,
-        "longitude": longitude
-    },
-    "timestamp": f"{date} {time}",
-    "positions": sidereal_data_with_houses
-}
-
-birthtransit = json.dumps(output, indent=2)
-
-# Display results
-print('Vedic Astrology (Sidereal) Data with Houses and Rashis:')
-for data in sidereal_data_with_houses:
-    if 'planet' in data:
-        print(f'Planet: {data["planet"]}, Degree: {data["degree"]}°, Rashi: {data["rashi"]}, House: {data["house"]}')
+    if results and len(results):
+        latitude = results[0]['geometry']['lat']
+        longitude = results[0]['geometry']['lng']
     else:
-        print(f'Ascendant Degree: {data["ascendant_degree"]}°, Rashi: {data["ascendant_rashi"]}')
+        raise ValueError('Location not found')
 
+    sidereal_data_with_houses = calculate_sidereal_positions_with_houses(dob, tob, latitude, longitude)
+
+    output = {
+        "location": pob,
+        "coordinates": {
+            "latitude": latitude,
+            "longitude": longitude
+        },
+        "timestamp": f"{dob} {tob}",
+        "positions": sidereal_data_with_houses
+    }
+
+    return json.dumps(output, indent=2)
+
+# Example usage
+# birthtransit = get_birth_transit("2000-01-01", "12:00", "Mumbai, India")
