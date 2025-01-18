@@ -67,13 +67,7 @@ async def get_gemstone_recommendations(request: GemstoneRequest):
     output = {
         "location": transit_data["location"],
         "timestamp": transit_data["timestamp"],
-        "recommendations": [],
-        "important_notes": [
-            "Consult an experienced astrologer before wearing any gemstone",
-            "Gemstones should be natural and of high quality", 
-            "Best worn after proper energization and during auspicious times",
-            "Consider your birth chart's complete analysis for optimal results"
-        ]
+        "recommendations": []
     }
 
     # Add recommendations based on planetary positions
