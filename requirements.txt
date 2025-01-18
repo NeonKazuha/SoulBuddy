@@ -1,0 +1,4 @@
+swisseph
+opencage
+python-dotenv
+
