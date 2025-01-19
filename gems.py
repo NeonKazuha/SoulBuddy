@@ -77,14 +77,13 @@ async def get_gemstone_recommendations(request: GemstoneRequest):
             if planet in planet_gemstone_map:
                 recommendation = {
                     "planet": planet,
-                    "position": {
-                        "house": position["house"],
-                        "rashi": position["rashi"]
-                    },
                     "gemstone": planet_gemstone_map[planet]["gemstone"],
                     "benefits": planet_gemstone_map[planet]["properties"]
                 }
                 output["recommendations"].append(recommendation)
+                # Limit to 3 recommendations
+                if len(output["recommendations"]) == 3:
+                    break
 
     return output
 
