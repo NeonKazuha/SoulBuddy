@@ -25,6 +25,8 @@ Please provide:
 5. Personal growth opportunities
 6. Do's and Dont's for today
 7. Give Workouts and Meditations based on horoscope
+8. sleep content based on the persons horoscope
+9. Lucky colour and Lucky Charm
 
 Format the response in clear sections."""
 
