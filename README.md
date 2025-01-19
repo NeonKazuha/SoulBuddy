@@ -10,7 +10,7 @@ Welcome to **API Chat**, a cutting-edge Python-based chat application designed t
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
 - [API Endpoints](#api-endpoints)
-- [Images](#images)
+- [Deployement](#deployement)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -102,14 +102,22 @@ To run the application using Docker:
 - **`POST /login`**: Endpoint for user authentication, ensuring secure access to the application.
 - **`POST /horoscope/`**: Endpoint to generate horoscope data, offering users personalized astrology insights.
 - **`POST /gemstones/`**: Endpoint to get gemstone recommendations based on location, providing users with unique and personalized suggestions.
+- 
+## Deployement
 
-## Images
+'''bash
+http://13.203.67.150/horoscope
+'''
 
 ![Screenshot 2025-01-19 072527](https://github.com/user-attachments/assets/c315ca4c-42a6-4e6c-949e-3595f5f4de2c)
+
+'''bash
+http://13.203.67.150:4000/gemstones
+'''
+
 ![Screenshot 2025-01-19 072737](https://github.com/user-attachments/assets/61addf94-cf62-4155-81fe-6d9b9e12cbca)
 ![Screenshot 2025-01-19 072802](https://github.com/user-attachments/assets/4d5bbc3a-8006-422b-9908-da2e59e5df1a)
 ![Screenshot 2025-01-19 072813](https://github.com/user-attachments/assets/ade14706-4fab-4227-99af-d477d8a97188)
-
 
 ## Contributing
 
