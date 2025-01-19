@@ -12,10 +12,8 @@ Welcome to **API Chat**, a cutting-edge Python-based chat application designed t
 - [Getting Started](#getting-started)
 - [API Endpoints](#api-endpoints)
 - [Deployement](#deployement)
-- [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
-- [Acknowledgments](#acknowledgments)
 
 ## Features
 
@@ -138,31 +136,6 @@ http://13.203.67.150:4000/gemstones
 ![Screenshot 2025-01-19 072802](https://github.com/user-attachments/assets/4d5bbc3a-8006-422b-9908-da2e59e5df1a)
 ![Screenshot 2025-01-19 072813](https://github.com/user-attachments/assets/ade14706-4fab-4227-99af-d477d8a97188)
 
-## Contributing
-
-We welcome contributions to enhance the functionality of API Chat. To contribute:
-
-1. **Fork the Repository**: Create a personal copy of the project, allowing you to work independently.
-2. **Create a New Branch**: Develop your feature or fix in a new branch, ensuring a clean and organized workflow.
-
-   ```bash
-   git checkout -b feature-name
-   ```
-
-3. **Commit Changes**: Document your progress with clear and concise commit messages, ensuring transparency and accountability.
-
-   ```bash
-   git commit -m "Description of feature or fix"
-   ```
-
-4. **Push to GitHub**: Upload your changes to your forked repository, making them available for review.
-
-   ```bash
-   git push origin feature-name
-   ```
-
-5. **Create a Pull Request**: Submit your changes for review, allowing the community to assess and integrate your contributions.
-
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/NeonKazuha/api-chat/blob/main/LICENSE) file for details.
@@ -170,11 +143,3 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 ## Contact
 
 For any inquiries or issues, please open an issue on the GitHub repository, ensuring a transparent and open communication channel.
-
-## Acknowledgments
-
-We appreciate the contributions of the open-source community and the support of all collaborators involved in this project, recognizing the value of collective effort and knowledge sharing.
-
----
-
-*Note: This documentation is based on the available information from the [API Chat GitHub Repository](https://github.com/NeonKazuha/api-chat).*
