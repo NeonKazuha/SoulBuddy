@@ -1,0 +1,3 @@
+[submodule "LangFlow"]
+	path = LangFlow
+	url = https://github.com/pranayyb/SoulBuddy.git
