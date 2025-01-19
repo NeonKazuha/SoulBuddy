@@ -31,6 +31,7 @@ Welcome to **API Chat**, a cutting-edge Python-based chat application designed t
 - **Groq**: Utilized for generating AI-enhanced predictions and advice, providing users with personalized insights and guidance.
 - **OpenCage Geocoder**: Used for geocoding locations for astrology calculations, ensuring accurate and reliable data processing.
 - **Swisseph**: Utilized for calculating planetary positions and generating birth charts, offering a comprehensive and accurate astrology integration.
+- **AWS**: Hosted on AWS, ensuring high availability and scalability.
 
 ## Getting Started
 
