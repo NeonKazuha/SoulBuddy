@@ -43,20 +43,17 @@ api-chat/
 │   ├── BirthTransit.py
 │   ├── FindHoroscope.py
 │   ├── Prediction.py
-│   └── UserManagement.py
-├── tests/
-│   ├── test_BirthTransit.py
-│   ├── test_FindHoroscope.py
-│   ├── test_Prediction.py
-│   └── test_UserManagement.py
-├── static/
-│   ├── image1.jpg
-│   └── image2.png
-├── templates/
-│   ├── index.html
-│   └── login.html
+│   └── CurrentTransit.py
+│   └── Kundli.py
+├── assets/
+│   ├── Images
+├── Horoscope/
+│   ├── Cache
 ├── main.py
+├── gems.py
+├── DockerFile
 ├── requirements.txt
+├── LICENSE
 └── README.md
 ```
 
