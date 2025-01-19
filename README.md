@@ -105,10 +105,11 @@ To run the application using Docker:
 
 ## Images
 
-![@Screenshot 2025-01-19 072813.png](/workspaces/api-chat/assets/Screenshot 2025-01-19 072527.png)
-![@Screenshot 2025-01-19 072737.png](/workspace/api-chat/assets/Screenshot%202025-01-19%20072737.png)
-![@Screenshot 2025-01-19 072527.png](/workspace/api-chat/assets/Screenshot%202025-01-19%20072527.png)
-![@Screenshot 2025-01-19 072802.png](/workspace/api-chat/assets/Screenshot%202025-01-19%20072802.png)
+![Screenshot 2025-01-19 072527](https://github.com/user-attachments/assets/c315ca4c-42a6-4e6c-949e-3595f5f4de2c)
+![Screenshot 2025-01-19 072737](https://github.com/user-attachments/assets/61addf94-cf62-4155-81fe-6d9b9e12cbca)
+![Screenshot 2025-01-19 072802](https://github.com/user-attachments/assets/4d5bbc3a-8006-422b-9908-da2e59e5df1a)
+![Screenshot 2025-01-19 072813](https://github.com/user-attachments/assets/ade14706-4fab-4227-99af-d477d8a97188)
+
 
 ## Contributing
 
