@@ -20,7 +20,7 @@ Welcome to **API Chat**, a cutting-edge Python-based chat application designed t
 - **Message Sending**: Allows users to send messages to the chat server, ensuring efficient communication.
 - **Message Retrieval**: Enables users to retrieve messages from the chat server, facilitating easy access to conversation history.
 - **User Management**: Supports functionalities for user registration and authentication, ensuring a secure and personalized experience.
-- **Astrology Integration**: Provides features for generating horoscopes, birth charts, and gemstone recommendations based on user input, offering a unique and engaging experience.
+- **Astrology Integration**: Provides features for generating horoscopes, Advices, Recommendations, Sleep Schedules, birth charts, gemstone recommendations and much more based on user input, offering a unique and engaging experience.
 
 ## Tech Stack
 
