@@ -117,13 +117,9 @@ To run the application using Docker:
 
 ## API Endpoints
 
-- **`POST /send_message`**: Endpoint to send a message, facilitating user communication.
-- **`GET /get_messages`**: Endpoint to retrieve messages, enabling users to access conversation history.
-- **`POST /register`**: Endpoint for user registration, allowing users to create an account.
-- **`POST /login`**: Endpoint for user authentication, ensuring secure access to the application.
 - **`POST /horoscope/`**: Endpoint to generate horoscope data, offering users personalized astrology insights.
 - **`POST /gemstones/`**: Endpoint to get gemstone recommendations based on location, providing users with unique and personalized suggestions.
-- 
+  
 ## Deployement
 
 http://13.203.67.150/horoscope
