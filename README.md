@@ -105,10 +105,10 @@ To run the application using Docker:
 
 ## Images
 
-![@Screenshot 2025-01-19 072813.png](https://github.com/NeonKazuha/api-chat/blob/main/images/Screenshot%202025-01-19%20072813.png)
-![@Screenshot 2025-01-19 072737.png](https://github.com/NeonKazuha/api-chat/blob/main/images/Screenshot%202025-01-19%20072737.png)
-![@Screenshot 2025-01-19 072527.png](https://github.com/NeonKazuha/api-chat/blob/main/images/Screenshot%202025-01-19%20072527.png)
-![@Screenshot 2025-01-19 072802.png](https://github.com/NeonKazuha/api-chat/blob/main/images/Screenshot%202025-01-19%20072802.png)
+![@Screenshot 2025-01-19 072813.png](https://github.com/NeonKazuha/api-chat/assets/Screenshot%202025-01-19%20072813.png)
+![@Screenshot 2025-01-19 072737.png](https://github.com/NeonKazuha/api-chat/assets/Screenshot%202025-01-19%20072737.png)
+![@Screenshot 2025-01-19 072527.png](https://github.com/NeonKazuha/api-chat/assets/Screenshot%202025-01-19%20072527.png)
+![@Screenshot 2025-01-19 072802.png](https://github.com/NeonKazuha/api-chat/assets/Screenshot%202025-01-19%20072802.png)
 
 ## Contributing
 
