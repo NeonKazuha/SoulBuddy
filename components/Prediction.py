@@ -2,7 +2,7 @@ import json
 from groq import Groq
 import os
 from dotenv import load_dotenv
-from FindHoroscope import generate_horoscope, get_horoscope
+from components.FindHoroscope import generate_horoscope, get_horoscope
 
 load_dotenv()
 

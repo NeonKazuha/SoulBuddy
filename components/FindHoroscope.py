@@ -131,8 +131,8 @@ def generate_horoscope(birth_chart_json, current_transit_json):
     return horoscope
 
 def get_horoscope(dob, tob, pob, cp):
-    from BirthTransit import get_birth_transit
-    from CurrentTransit import get_current_transit
+    from components.BirthTransit import get_birth_transit
+    from components.CurrentTransit import get_current_transit
     
     birth_transit = get_birth_transit(dob, tob, pob)
     current_transit = get_current_transit(cp)

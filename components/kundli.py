@@ -1,7 +1,7 @@
 import requests
 from PIL import Image, ImageDraw, ImageFont
 import math
-from FindHoroscope import get_horoscope
+from components.FindHoroscope import get_horoscope
 
 # Vedicastro API details
 API_URL = "https://vedicastroapi.com/api/v1"

@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from Prediction import get_predictions
-from FindHoroscope import get_horoscope, generate_horoscope
-from CurrentTransit import get_current_transit
-from BirthTransit import get_birth_transit
+from components.Prediction import get_predictions
+from components.FindHoroscope import get_horoscope, generate_horoscope
+from components.CurrentTransit import get_current_transit
+from components.BirthTransit import get_birth_transit
 
 app = FastAPI()
 
