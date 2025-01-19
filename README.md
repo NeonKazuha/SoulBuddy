@@ -8,6 +8,7 @@ Welcome to **API Chat**, a cutting-edge Python-based chat application designed t
 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
+- [Folder Structure](#folder-structure)
 - [Getting Started](#getting-started)
 - [API Endpoints](#api-endpoints)
 - [Deployement](#deployement)
@@ -33,6 +34,31 @@ Welcome to **API Chat**, a cutting-edge Python-based chat application designed t
 - **OpenCage Geocoder**: Used for geocoding locations for astrology calculations, ensuring accurate and reliable data processing.
 - **Swisseph**: Utilized for calculating planetary positions and generating birth charts, offering a comprehensive and accurate astrology integration.
 - **AWS**: Hosted on AWS, ensuring high availability and scalability.
+
+## Folder Structure
+
+```
+api-chat/
+├── components/
+│   ├── BirthTransit.py
+│   ├── FindHoroscope.py
+│   ├── Prediction.py
+│   └── UserManagement.py
+├── tests/
+│   ├── test_BirthTransit.py
+│   ├── test_FindHoroscope.py
+│   ├── test_Prediction.py
+│   └── test_UserManagement.py
+├── static/
+│   ├── image1.jpg
+│   └── image2.png
+├── templates/
+│   ├── index.html
+│   └── login.html
+├── main.py
+├── requirements.txt
+└── README.md
+```
 
 ## Getting Started
 
@@ -105,15 +131,11 @@ To run the application using Docker:
 - 
 ## Deployement
 
-'''bash
 http://13.203.67.150/horoscope
-'''
 
 ![Screenshot 2025-01-19 072527](https://github.com/user-attachments/assets/c315ca4c-42a6-4e6c-949e-3595f5f4de2c)
 
-'''bash
 http://13.203.67.150:4000/gemstones
-'''
 
 ![Screenshot 2025-01-19 072737](https://github.com/user-attachments/assets/61addf94-cf62-4155-81fe-6d9b9e12cbca)
 ![Screenshot 2025-01-19 072802](https://github.com/user-attachments/assets/4d5bbc3a-8006-422b-9908-da2e59e5df1a)
